@@ -1,3 +1,14 @@
+'''
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+******Felipe Daniel Python developer******
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Eng de Controle e Automação - UTFPR CP
+Control and Automation Eng - 2020,May
+by: Felipe Daniel Ferreira de Almeida
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-='''
+
+
+
 import sqlite3                                      #Biblioteca utilizada para manipular o BD
 
 conn = sqlite3.connect('UserData.db')               #Conecta o BD (ou cria caso isso não exista no diretório)

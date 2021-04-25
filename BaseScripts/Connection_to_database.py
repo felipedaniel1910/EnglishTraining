@@ -19,7 +19,7 @@ def RegisterToDataBase():                   #Função Responsável por cadastrar
         INSERT INTO Words(Engb,Portb) VALUES(?,?)
         """ ,(Engl,Port))                   #Abre o BD para inserção e posiciona o cursor na primeira linha vazia
         Database.conn.commit()              #Salvar as alterações- Commit salva
-        #messagebox.showinfo(title="Save Info", message="Palavra Cadastrada Com Sucesso")
+        messagebox.showinfo(title="Save Info", message="Palavra Cadastrada Com Sucesso")
 
 
 def GetWord():                              #Função responsável por puxar os dados salvos no BD para o programa
