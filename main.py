@@ -1,13 +1,3 @@
-'''
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-******Felipe Daniel Python developer******
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
- Eng de Controle e Automação - UTFPR CP
- Control and Automation Eng - 2020,May
- by: Felipe Daniel Ferreira de Almeida
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-'''
-
 #Bibliotecas para que o programa pronucie as palavras
 import Database                             #faz referencia ao novo script ->Database<-
 from tkinter import messagebox              #permite utilizar caixa de aviso (texto)
