@@ -99,9 +99,11 @@ while(1):
     print("\n Escolha uma das opções abaixo: ")
 
     
-    menu = 0
-    while (menu!=1 and menu!=2 and menu!=3):
-        menu = int(input("\n 1- Cadastrar palavras.\n 2- Jogar\n 3- Sair "))
+    menu = 0 #inicia a variavel com valor 0
+    try:
+        while (menu!=1 and menu!=2 and menu!=3):
+            menu = int(input("\n 1- Cadastrar palavras.\n 2- Jogar\n 3- Sair "))
+    except: None
 
     if menu == 1:
 
@@ -135,8 +137,12 @@ while(1):
 
                 if indice == 0: # Mostra a palavra em Ingles
                     answer = str(input("\n Translate the word *{}* to portuguese: ".format(engl[word]))).lower()
-
-                    speech = int(input(" Hear pronunciation: 1-YES 2-NOT: "))
+                    
+                    speech=0 #inicia a variavel com valor 0
+                    try: 
+                        while (speech!=1 and speech!=2):
+                            speech = int(input(" Hear pronunciation: 1-YES 2-NOT: "))
+                    except: None
 
                     if speech == 1:
                         speak(engl[word])
@@ -160,7 +166,12 @@ while(1):
                         print(" A palavra correta é {}.".format(engl[word]))
                         misses+=1
 
-            again = int(input("\n Voce gostaria de continuar? 1-SIM  2-NÃO: "))
+            again = 0 #inicia a variavel com valor 0
+            try: 
+                while (again!=1 and again!=2):
+                    again = int(input("\n Voce gostaria de continuar? 1-SIM  2-NÃO: "))
+            except: 
+                again = 2
 
             if again == 2:
                 print("\n Você ACERTOU {} palavras e ERROU {} palavras...".format(hits,misses))
@@ -172,7 +183,7 @@ while(1):
     if menu == 3:
         print("\n Saindo em 5 segundos...")
         time.sleep(5)
-        break;
+        break
     
 
                 
