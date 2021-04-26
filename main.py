@@ -42,8 +42,8 @@ def GetWord():                              #Função responsável por puxar os 
         SELECT * FROM Words
         """)                                #Abre o BD para leitura e posiciona o cursor na primeira linha
     
-    global engl                             #Avisa a função que se trata de uma variável global
-    global port                             #Avisa a função que se trata de uma variável global
+    #global engl                             #Avisa a função que se trata de uma variável global
+    #global port                             #Avisa a função que se trata de uma variável global
 
     while(1):                               #Repete até que seja quebrado (break)
         
@@ -101,8 +101,8 @@ while(1):
     
     menu = 0 #inicia a variavel com valor 0
     try:
-        while (menu!=1 and menu!=2 and menu!=3):
-            menu = int(input("\n 1- Cadastrar palavras.\n 2- Jogar\n 3- Sair "))
+        while (menu!=1 and menu!=2 and menu!=3 and menu!=4):
+            menu = int(input("\n 1- Cadastrar palavras.\n 2- Jogar\n 3- Consultar BD.\n 4- Sair "))
     except: None
 
     if menu == 1:
@@ -111,7 +111,10 @@ while(1):
 
     if menu == 2:
 
-        GetWord()
+        if len(engl) != 0: #verifica se os dados já foram extraídos do BD
+            None
+        else: 
+            GetWord()
         
         while(1):
 
@@ -181,6 +184,36 @@ while(1):
                 break
 
     if menu == 3:
+
+        os.system('cls') # Limpa a tela
+
+        print("\n")
+        print("-=-"*20)
+        print("         Welcome to Felipe's English Training...")
+        print("-=-"*20)
+        
+        if len(engl) != 0: #verifica se os dados já foram extraídos do BD
+            None
+        else: GetWord()
+
+        print('\nO BD contém {} dados!'.format(len(engl)))
+
+        consulta = 0
+        try:
+            while(consulta!=1 and consulta!= 2):
+                consulta = int(input('\nQue tipo de consulta deseja fazer?\n\n 1- Visualizar dados.\n 2- Sair. '))
+        except: 
+            None
+
+        if consulta == 1:
+            for i in range (0,len(engl)-1):
+                print('\n{} - En word: {}\n{} - Pt word: {}'.format(i,engl[i],i, port[i]))
+            input('\nPressione ENTER para continuar...')
+
+        else: 
+            None
+  
+    if menu == 4:
         print("\n Saindo em 5 segundos...")
         time.sleep(5)
         break
