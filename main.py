@@ -206,7 +206,7 @@ while(1):
             None
 
         if consulta == 1:
-            for i in range (0,len(engl)-1):
+            for i in range (0,len(engl)):
                 print('\n{} - En word: {}\n{} - Pt word: {}'.format(i,engl[i],i, port[i]))
             input('\nPressione ENTER para continuar...')
 
